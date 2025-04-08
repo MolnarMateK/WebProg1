@@ -8,7 +8,7 @@ function Header() {
 
 function Footer() {
     return React.createElement("footer", null, 
-        React.createElement("p", null, "Készítette: [Te Neved] – NEPTUN: XXXXX")
+        React.createElement("p", null, "Készítette: Molnár Máté, Kollár Krisztina – NEPTUN: HV1WUV, FH4R6N")
     );
 }
 
