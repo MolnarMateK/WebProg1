@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="A Vaszilij EDC egy blog az every day carry magyar szerelemeseinek. Bemutatók késekről, felszerelésekről, és sok minden másról." name="description"/>
+<title>Kezdőlap - Vaszilij EDC</title>
+<!-- Fontok -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&amp;family=Montserrat:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Favicon -->
+<link href="https://vaszilijedc.hu/wp-content/uploads/2018/05/cropped-Vaszilij-EDC-32x32.jpg" rel="icon" sizes="32x32"/>
+<link href="https://vaszilijedc.hu/wp-content/uploads/2018/05/cropped-Vaszilij-EDC-192x192.jpg" rel="icon" sizes="192x192"/>
+<link href="https://vaszilijedc.hu/wp-content/uploads/2018/05/cropped-Vaszilij-EDC-180x180.jpg" rel="apple-touch-icon"/>
+<style>
+        :root {
+            --primary-color: #e02b20;
+            --secondary-color: #303030;
+            --dark-color: #030303;
+            --light-color: #f8f8f8;
+            --text-color: #333;
+            --text-light: #777;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Teko', sans-serif;
+            font-weight: 500;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Fejléc */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 60px;
+            transition: var(--transition);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            position: relative;
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover,
+        nav ul li.current-menu-item a {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li.current-menu-item a::after {
+            width: 100%;
+        }
+        
+        /* Hero rész */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://vaszilijedc.hu/wp-content/uploads/2020/12/Logo_nagy_íves.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: #c8231a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Fő tartalom */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .intro-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .intro-text {
+            flex: 1;
+        }
+        
+        .intro-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .intro-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .intro-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .intro-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Cikk slider */
+        .articles-slider {
+            margin: 60px 0;
+        }
+        
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .slider-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .slider-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.1);
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .article-excerpt {
+            margin-bottom: 15px;
+        }
+        
+        /* EDC magyarázat */
+        .edc-explanation {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .edc-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .edc-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .edc-text {
+            flex: 1;
+        }
+        
+        .edc-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        /* Link kártyák */
+        .link-cards {
+            padding: 60px 0;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .link-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .link-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Lábléc */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Animációk */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Reszponzív design */
+        @media (max-width: 992px) {
+            .intro-section, .edc-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-section {
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+}
+.article-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.article-excerpt {
+    margin-bottom: 1rem;
+}
+.article-content a.btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+</style>
+</head>
+<body>
+<!-- Fejléc -->
+<header>
+<div class="container header-container">
+<a href="/">
+<img alt="Vaszilij EDC" class="logo" src="https://vaszilijedc.hu/wp-content/uploads/2018/05/Vaszilij-EDC.jpg.webp"/>
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Kezdőlap</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="tamogatas.html">Támogatás</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- Hero rész -->
+<section class="hero">
+<div class="container">
+<h1>Vaszilij EDC</h1>
+<p>A mindennapi kés- és felszerelés világának magyar közössége</p>
+<a class="btn" href="#tartalom">Fedezd fel</a>
+</div>
+</section>
+<!-- Fő tartalom -->
+<main class="main-content" id="tartalom">
+<section class="main-content" style="padding: 60px 0;">
+<div class="container">
+<h1 style="font-size: 2.5rem; color: var(--primary-color); text-align: center;">Blog</h1>
+<p style="text-align: center; max-width: 700px; margin: 20px auto;">
+                    Itt találhatók a legfrissebb gondolatok, bejegyzések, tesztek és történetek az every day carry világából.
+                </p>
+<div class="article-card" style="margin-top: 40px;">
+</div>
+
+<div class="slider-container">
+
+<!-- Cikk 1 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/04/IMG_2549-400x250.jpeg" alt="We Banter újratöltve">
+    </div>
+    <div class="article-content">
+        <h3>We Banter újratöltve</h3>
+        <p class="article-excerpt">Az egyik legismertebb modern EDC zsebkés új színekben és kivitelben tér vissza – és még mindig fantasztikus választás.</p>
+        <a href="https://vaszilijedc.hu/we-banter-ujratoltve/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 2 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/04/20250222_1659167002-400x250.jpg" alt="Lali szamurájkardja">
+    </div>
+    <div class="article-content">
+        <h3>Lali szamurájkardja</h3>
+        <p class="article-excerpt">Képzeljük el Lalit, aki nyílászárók beszerelésével keresi a kenyerét. Egyszerű építőipari munkás, aki már évek óta megbízható munkát végez. Szépen építgeti az életét, komoly barátnője van, saját lakásra gyűjt. Egyik reggel, amikor egy újépítésű házhoz szállnak ki a...</p>
+        <a href="https://vaszilijedc.hu/lali-szamurajkardja/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 3 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/03/IMG_2100-400x250.jpeg" alt="Olcsó János túrázni megy!">
+    </div>
+    <div class="article-content">
+        <h3>Olcsó János túrázni megy!</h3>
+        <p class="article-excerpt">Mindennapi életünk tele van rohanással, stresszhatásokkal. Meló, beosztás, család, egészség, mindennapi gondok. Ezek mellé még van egy jókora digitális függésem is. Képes vagyok naphosszat a telefon képernyőjét bámulni. Kell néha egy kis reboot vagy restart, egy kis...</p>
+        <a href="https://vaszilijedc.hu/olcso-janos-turazni-megy/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 4 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/03/IMG_1892-400x250.jpeg" alt="Modern slip jointok-régi nóta újra hangszerelve">
+    </div>
+    <div class="article-content">
+        <h3>Modern slip jointok-régi nóta újra hangszerelve</h3>
+        <p class="article-excerpt">Nem reprezentatív (ismerőseim egy részét felölelő) mintán végzett kutatásom szerint a mai napig a legtöbbeknek a bicska szó hallatán apa vagy nagypapa tradicionális, magyar gyártmányú kézműves bicskája, vagy a „svájci” bicska jut eszébe. Bár az előbbi jellegzetesen...</p>
+        <a href="https://vaszilijedc.hu/modern-slip-jointok-regi-nota-ujra-hangszerelve/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 5 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/01/Kep1-400x250.jpg" alt="Svörd Peasant">
+    </div>
+    <div class="article-content">
+        <h3>Svörd Peasant</h3>
+        <p class="article-excerpt">Magányos túrázó sétál a Fekete-Körös gátján a táborhelye felé. Apró hobó kályhájában ropog a tűz. Sült szalonna és lilahagyma illata terjeng a táborhelyen. A túrázó fatányéron katonázza a falatokat surlódó záras bicskájával. Legalábbis ez a kép jelent meg a szemeim...</p>
+        <a href="https://vaszilijedc.hu/svord-peasant/" class="btn">Tovább</a>
+    </div>
+</div>
+
+
+<!-- Cikk 6 – Sárkányölő késkészlet (Olfa CK-2 helyett sniccer?) -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/01/20241221_1020060742-400x250.jpg" alt="Olfa CK-2 Kés helyett sniccer?">
+    </div>
+    <div class="article-content">
+        <h3>Sárkányölő késkészlet</h3>
+        <p class="article-excerpt">A tékozló fiú visszatér  Pár éve, mikor a  Tops cég Lil Roughneck nevű késének bűvkörében éltem, azon gondolkodtam, hogy azért kellene az említett mini tankhámozó mellé valami olyan kés is, ami nemcsak repeszteni, hanem vágni is tud. Ezirányú keresgélésem közben akadt....</p>
+        <a href="https://vaszilijedc.hu/olfa-ck-2-kes-helyett-sniccer/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 7 – Aranyhal a viperafészekből -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2024/12/IMG_2113-400x250.jpeg" alt="Aranyhal a viperafészekből">
+    </div>
+    <div class="article-content">
+        <h3>Aranyhal a viperafészekből</h3>
+        <p class="article-excerpt">A Viper Koit vagy 3 éve vettem egy helyi éltárstól, másodkézből. Nagyon tetszett a képeken és bemutató videókon, hamar elkapott a “ kell “ érzés. A cikk végére kiderül, megérte-e. Egy kis történelem A Tecnocut snc-t 1987- ben alapították az olaszországi Maniagoban....</p>
+        <a href="https://vaszilijedc.hu/__trashed/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 8 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2024/12/Kep1-400x250.jpg" alt="Byrd Cara cara 2">
+    </div>
+    <div class="article-content">
+        <h3>Byrd Cara cara 2</h3>
+        <p class="article-excerpt">A Byrd Cara cara 2-t egy impulzusvásárlás során szereztem be használtan, jóárasítva. Egy potenciális munkakést, mentőkést láttam benne. Az évek során bebizonyította, hogy egy igazi “igásló”, amire mindig lehet számítani. Egy kis háttér: A Byrd a Spyderco...</p>
+        <a href="https://vaszilijedc.hu/byrd-cara-cara-2/" class="btn">Tovább</a>
+    </div>
+</div>
+
+<!-- Cikk 9 -->
+<div class="article-card">
+    <div class="article-image">
+        <img src="https://vaszilijedc.hu/wp-content/uploads/2025/02/IMG_1814-400x250.jpeg" alt="Amikor a hóhért akasztják, avagy mi fán terem az Ultras">
+    </div>
+    <div class="article-content">
+        <h3>Amikor a hóhért akasztják, avagy mi fán terem az Ultras</h3>
+        <p class="article-excerpt">A blog cikkei egyre-másra kerülnek ki az oldalra, forognak közszájon, hála az internetnek. Sokan régi ismerősként üdvözlik egyik-másik bemutató alanyát, másoknak pedig az újdonság erejével hat egy-egy megjelenő írás főszereplője. Igen ám, de a cikkek nem a bokorban...</p>
+        <a href="https://vaszilijedc.hu/amikor-a-hohert-akasztjak/" class="btn">Tovább</a>
+    </div>
+</div>
+
+</div>
+
+<div class="article-content">
+<h3>Bemutatkozik a blog</h3>
+<p>Ez a blog azzal a céllal született, hogy közösséget építsen az EDC, azaz mindennapi felszerelések szerelmesei köré.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Lábléc -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Navigáció</h3>
+<ul>
+<li><a href="index.html">Kezdőlap</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="tamogatas.html">Támogatás</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Jogi információk</h3>
+<ul>
+<li><a href="https://vaszilijedc.hu/impresszum/">Impresszum</a></li>
+<li><a href="https://vaszilijedc.hu/jogi-nyilatkozat/">Jogi nyilatkozat</a></li>
+<li><a href="https://vaszilijedc.hu/cookie-kezeles/">Cookie-Kezelés</a></li>
+<li><a href="https://vaszilijedc.hu/adatkezeles/">Adatkezelés</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Közösségi média</h3>
+<ul>
+<li><a href="https://www.facebook.com/VaszilijEdc" target="_blank">Facebook oldal</a></li>
+<li><a href="https://www.facebook.com/groups/434204628313605" target="_blank">Facebook csoport</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Vaszilij EDC. Minden jog fenntartva.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Egyszerű JavaScript a reszponzív menühöz
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sima görgetés anchor linkekhez
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Lazy loading képekhez
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // Dinamikus betöltés polyfill
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+                document.body.appendChild(script);
+            }
+        });
+    </script>
+</body>
+</html>
